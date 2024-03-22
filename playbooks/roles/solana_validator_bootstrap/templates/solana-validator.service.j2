@@ -23,6 +23,10 @@ ExecStart={{ env_path }}/solana-validator \
 --rpc-port {{ solana_rpc_port }} \
 --only-known-rpc \
 --private-rpc \
+--full-rpc-api \
+--enable-rpc-transaction-history \
+--enable-extended-tx-metadata-storage \
+--enable-cpi-and-log-storage \
 --expected-genesis-hash {{ expected_genesis_hash }} \
 {% for entrypoint in entrypoints %}
 --entrypoint {{ entrypoint }} \

@@ -7,12 +7,12 @@
   tags:
     - config.firewall
 
-- name: 🔥 Deny all ingress connections
-  ufw:
-    policy: deny
-    direction: incoming
-  tags:
-    - config.firewall
+# - name: 🔥 Deny all ingress connections
+#   ufw:
+#     policy: deny
+#     direction: incoming
+#   tags:
+#     - config.firewall
 
 - name: 🔥 allow ingress ssh
   ufw:
@@ -28,7 +28,7 @@
     rule: allow
     proto: udp
     direction: in
-    port: '{{ open_solana_ports_start }}:{{ open_solana_ports_end }}'
+    port: "{{ open_solana_ports_start }}:{{ open_solana_ports_end }}"
   tags:
     - config.firewall
 
@@ -37,7 +37,7 @@
     rule: allow
     proto: tcp
     direction: in
-    port: '{{ open_solana_ports_start }}:{{ open_solana_ports_end }}'
+    port: "{{ open_solana_ports_start }}:{{ open_solana_ports_end }}"
   tags:
     - config.firewall
 
