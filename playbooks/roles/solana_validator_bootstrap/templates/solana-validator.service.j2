@@ -22,11 +22,16 @@ ExecStart={{ env_path }}/solana-validator \
 --authorized-voter /home/solana/.secrets/funded-validator-keypair.json \
 --rpc-port {{ solana_rpc_port }} \
 --only-known-rpc \
+--no-voting \
 --private-rpc \
 --full-rpc-api \
 --enable-rpc-transaction-history \
 --enable-extended-tx-metadata-storage \
 --enable-cpi-and-log-storage \
+--accounts-db-cache-limit-mb 2048 \
+--accounts-index-memory-limit-mb 10240 \
+--accounts-index-scan-results-limit-mb 10240 \
+--maximum-local-snapshot-age 300 \
 --expected-genesis-hash {{ expected_genesis_hash }} \
 {% for entrypoint in entrypoints %}
 --entrypoint {{ entrypoint }} \
