@@ -29,7 +29,13 @@ ExecStart={{ env_path }}/solana-validator \
 --enable-rpc-transaction-history \
 --enable-extended-tx-metadata-storage \
 --enable-cpi-and-log-storage \
+--replay-slots-concurrently \
+--tpu-enable-udp \
 --maximum-local-snapshot-age 300 \
+--tpu-connection-pool-size 400 \
+--rpc-send-retry-ms 100 \
+--rpc-send-leader-count 9999 \
+--rpc-send-service-max-retries 100 \
 --expected-genesis-hash {{ expected_genesis_hash }} \
 {% for entrypoint in entrypoints %}
 --entrypoint {{ entrypoint }} \
