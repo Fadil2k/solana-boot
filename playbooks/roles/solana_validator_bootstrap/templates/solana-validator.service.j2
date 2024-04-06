@@ -37,7 +37,7 @@ ExecStart={{ env_path }}/solana-validator \
 --rpc-send-retry-ms 100 \
 --rpc-send-leader-count 9999 \
 --rpc-send-service-max-retries 100 \
---health-check-slot-distance 10 \
+--health-check-slot-distance 50 \
 --expected-genesis-hash {{ expected_genesis_hash }} \
 {% for entrypoint in entrypoints %}
 --entrypoint {{ entrypoint }} \
