@@ -139,6 +139,6 @@ CI_COMMIT=$(git rev-parse HEAD) scripts/cargo-install-all.sh --validator-only ~/
 
 rm -rf "$HOME"/.local/share/solana/install/active_release
 
-ln -sf /home/solana/.local/share/solana/install/releases/"$TAG" "$HOME"/.local/share/solana/install/active_release
+ln -sf /home/ubuntu/.local/share/solana/install/releases/"$TAG" "$HOME"/.local/share/solana/install/active_release
 
 rm -rf "$HOME"/jito-solana

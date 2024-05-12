@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -f /home/solana/.secrets/validator-keypair.json || ! -f /home/solana/.secrets/validator-keypair.json ]]
+if [[ ! -f /home/ubuntu/.secrets/validator-keypair.json || ! -f /home/ubuntu/.secrets/validator-keypair.json ]]
 then
   echo ''
   echo ''
@@ -13,13 +13,13 @@ then
 {% endif %}
   echo -e "🛠   In order to complete the configuration, copy your validator-keypair and your vote-account-keypair in the following location."
   echo ''
-  echo -e "🔑  validator-keypair => /home/solana/.secrets/funded-validator-keypair.json"
-  echo -e "🔑  vote-account-keypair => /home/solana/.secrets/vote-account-keypair.json"
+  echo -e "🔑  validator-keypair => /home/ubuntu/.secrets/funded-validator-keypair.json"
+  echo -e "🔑  vote-account-keypair => /home/ubuntu/.secrets/vote-account-keypair.json"
   echo ''
   echo -e "🔑  If it's your primary node or if you only have one node, create the following symlink"
-  echo -e "🔑  ln -sf /home/solana/.secrets/funded-validator-keypair.json /home/solana/.secrets/validator-keypair.json"
+  echo -e "🔑  ln -sf /home/ubuntu/.secrets/funded-validator-keypair.json /home/ubuntu/.secrets/validator-keypair.json"
   echo -e "🔑  If it's your secondary node (🔥 HOT Spare), create the following symlink"
-  echo -e "🔑  ln -sf /home/solana/.secrets/unfunded-validator-keypair.json /home/solana/.secrets/validator-keypair.json"
+  echo -e "🔑  ln -sf /home/ubuntu/.secrets/unfunded-validator-keypair.json /home/ubuntu/.secrets/validator-keypair.json"
   echo ''
   echo "If you don't have a validator-keypair and vote-account-keypair yet, refer to the official docs to generate one."
   echo -e "📗  https://docs.solana.com/running-validator/validator-start#generate-identity"
@@ -37,7 +37,7 @@ then
   echo ''
 fi
 
-if [[ -f /home/solana/.secrets/validator-keypair.json || -f /home/solana/.secrets/validator-keypair.json ]]
+if [[ -f /home/ubuntu/.secrets/validator-keypair.json || -f /home/ubuntu/.secrets/validator-keypair.json ]]
 then
   echo -e "👷  Hello {{ 'Jito' if jito_enable else ''  }} Solana Operator."
   echo ''

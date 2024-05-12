@@ -10,7 +10,7 @@
 # ARG_OPTIONAL_SINGLE([log-level],[],[Solana client log level],[WARN])
 # ARG_OPTIONAL_SINGLE([ramdisk-size-gb],[],[Solana client ram disk size],[200])
 # ARG_OPTIONAL_SINGLE([swap-file-size-gb],[],[Solana client swap file size],[128])
-# ARG_OPTIONAL_SINGLE([secrets-path],[],[Solana client secrets path],[/home/solana/.secrets])
+# ARG_OPTIONAL_SINGLE([secrets-path],[],[Solana client secrets path],[/home/ubuntu/.secrets])
 # ARG_OPTIONAL_SINGLE([solana-user],[],[Solana client user],[solana])
 # ARG_OPTIONAL_SINGLE([solana-version],[],[Solana client version],[1.13.6])
 # ARG_OPTIONAL_SINGLE([use-ramdisk-for-account],[],[Put accounts in ramdisk],[True])
@@ -51,22 +51,22 @@ begins_with_short_option()
 _arg_cluster="mainnet-beta"
 _arg_ledger_path="/mnt/solana/ledger"
 _arg_snapshots_path="/mnt/solana/snapshots"
-_arg_accounts_path="/mnt/solana/accounts"
+_arg_accounts_path=
 _arg_log_level="WARN"
-_arg_ramdisk_size_gb="200"
-_arg_swap_file_size_gb="128"
-_arg_secrets_path="/home/solana/.secrets"
-_arg_solana_user="solana"
-_arg_solana_version="1.13.6"
+_arg_ramdisk_size_gb="350"
+_arg_swap_file_size_gb="580"
+_arg_secrets_path="/home/ubuntu/.secrets"
+_arg_solana_user="ubuntu"
+_arg_solana_version="1.17.31"
 _arg_use_ramdisk_for_account="True"
-_arg_jito_enable="False"
-_arg_jito_block_engine_url=
-_arg_jito_relayer_url=
-_arg_jito_receiver_addr=
-_arg_jito_tip_payment_program_pubkey=
-_arg_jito_distribution_program_pubkey=
-_arg_jito_merkle_root_upload_authority=
-_arg_jito_commission_bps="0"
+_arg_jito_enable="True"
+_arg_jito_block_engine_url="https://ny.mainnet.block-engine.jito.wtf"
+_arg_jito_relayer_url="http://ny.mainnet.relayer.jito.wtf:8100"
+_arg_jito_receiver_addr="141.98.216.96:1002"
+_arg_jito_tip_payment_program_pubkey="T1pyyaTNZsKv2WcRAB8oVnk93mLJw2XzjtVYqCsaHqt"
+_arg_jito_distribution_program_pubkey="4R3gSG8BpU4t19KYj8CfnbtRpnT8gtk4dvTHxVRwc2r7"
+_arg_jito_merkle_root_upload_authority="GZctHpWXmsZC1YHACTGGcHhYxjdRqQvTpYkb9LMvxDib"
+_arg_jito_commission_bps="500"
 
 
 print_help()
@@ -80,9 +80,9 @@ print_help()
 	printf '\t%s\n' "--log-level: Solana client log level (default: 'WARN')"
 	printf '\t%s\n' "--ramdisk-size-gb: Solana client ram disk size (default: '200')"
 	printf '\t%s\n' "--swap-file-size-gb: Solana client swap file size (default: '128')"
-	printf '\t%s\n' "--secrets-path: Solana client secrets path (default: '/home/solana/.secrets')"
+	printf '\t%s\n' "--secrets-path: Solana client secrets path (default: '/home/ubuntu/.secrets')"
 	printf '\t%s\n' "--solana-user: Solana client user (default: 'solana')"
-	printf '\t%s\n' "--solana-version: Solana client version (default: '1.13.6')"
+	printf '\t%s\n' "--solana-version: Solana client version (default: '1.17.33')"
 	printf '\t%s\n' "--use-ramdisk-for-account: Put accounts in ramdisk (default: 'True')"
 	printf '\t%s\n' "--jito-enable: Enable Jito configuration (default: 'False')"
 	printf '\t%s\n' "--jito-block-engine-url: Jito block engine URL (no default)"
@@ -297,6 +297,7 @@ init_validator () {
     'snapshots_path': $_arg_snapshots_path, \
     'solana_user': $_arg_solana_user, \
     'solana_version': $_arg_solana_version, \
+	'ramdisk_path:' "/mnt/solana/accounts"
     'use_ramdisk_for_account': $_arg_use_ramdisk_for_account, \
     'jito_enable': $_arg_jito_enable, \
     'jito_block_engine_url': $_arg_jito_block_engine_url, \

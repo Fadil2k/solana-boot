@@ -5,22 +5,22 @@
   tags:
     - config.packages
 
-- name: 🤹 Create swap
-  import_tasks: swap.yaml
-  tags:
-    - config.swap
-  when: swap_file_size_gb | int  > 0
+#- name: 🤹 Create swap
+#  import_tasks: swap.yaml
+# tags:
+#    - config.swap
+#  when: swap_file_size_gb | int  > 0
+#
+#- name: 💾 Create ramdisk
+#  import_tasks: ramdisk.yaml
+#  tags:
+#    - config.ramdisk
+#  when: use_ramdisk_for_account
 
-- name: 💾 Create ramdisk
-  import_tasks: ramdisk.yaml
-  tags:
-    - config.ramdisk
-  when: use_ramdisk_for_account
-
-- name: 🏎 Config cpu governor performance mode
-  import_tasks: governor.yaml
-  tags:
-    - config.cpu
+#- name: 🏎 Config cpu governor performance mode
+# import_tasks: governor.yaml
+#  tags:
+#   - config.cpu
 
 - name: 🔥 Config firewall
   import_tasks: firewall.yaml

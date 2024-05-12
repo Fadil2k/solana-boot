@@ -7,12 +7,12 @@
   tags:
     - config.firewall
 
-# - name: 🔥 Deny all ingress connections
-#   ufw:
-#     policy: deny
-#     direction: incoming
-#   tags:
-#     - config.firewall
+- name: 🔥 Deny all ingress connections
+  ufw:
+    policy: deny
+    direction: incoming
+  tags:
+    - config.firewall
 
 - name: 🔥 allow ingress ssh
   ufw:

@@ -7,7 +7,7 @@
 # ARG_OPTIONAL_SINGLE([log-level], [], [Solana client log level], [WARN])
 # ARG_OPTIONAL_SINGLE([ramdisk-size-gb], [], [Solana client ram disk size], [200])
 # ARG_OPTIONAL_SINGLE([swap-file-size-gb], [], [Solana client swap file size], [128])
-# ARG_OPTIONAL_SINGLE([secrets-path], [], [Solana client secrets path], [/home/solana/.secrets])
+# ARG_OPTIONAL_SINGLE([secrets-path], [], [Solana client secrets path], [/home/ubuntu/.secrets])
 # ARG_OPTIONAL_SINGLE([snapshots-path], [], [Solana client snapshots path], [/mnt/solana/snapshots])
 # ARG_OPTIONAL_SINGLE([solana-user], [], [Solana client user], [solana])
 # ARG_OPTIONAL_SINGLE([solana-version], [], [Solana client version], [1.13.6])
